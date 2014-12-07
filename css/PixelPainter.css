@@ -4,6 +4,19 @@
   clear: both;
 }
 
+body {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  background-color: red;
+  display: inline-block;
+}
+
 div.grid {
 
   border: 1px solid black;
