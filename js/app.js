@@ -27,8 +27,6 @@ var main = function(){
 
   PixelPainter.prototype.render = function () {
 
-    console.log("TEST");
-
     for (var i = 0; i < this.height; i++) {
       for (var j = 0; j < this.width ; j++) {
         
@@ -38,29 +36,29 @@ var main = function(){
           class: "pixel_square"
         });
       }
+      console.log("Row#:"+i);
       this.grid.append(this.pixel_row);
+      this.pixel_row = $("<div>", {
+        class: "pixel_row clearfix"
+      });
     }
-
-    this.grid.append(this.pixel_square);
 
     return this.grid;
   };
 
   //when page loads, load the grid
-
-  var pixelPainter = new PixelPainter(20,20);
-  console.log(pixelPainter);
+  var pixelPainter = new PixelPainter(5,5);
   $("#container").append(pixelPainter.render());
 
 
 
-  $(color_pallette).click(function () {
-    color = $(this).css('background-color');
-  });
+  // $(color_pallette).click(function () {
+  //   color = $(this).css('background-color');
+  // });
 
-  $(pixel_square).click(function () {
-    $(this).css('background-color', color);
-  })
+  // $(pixel_square).click(function () {
+  //   $(this).css('background-color', color);
+  // })
 
 
 
