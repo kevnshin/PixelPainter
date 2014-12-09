@@ -12,6 +12,7 @@ PixelPainter.prototype.render = function () {
 
   var app = [this.build_palette(), this.build_grid()];
   this.color_changer();
+  this.clear_all();
 
   return app;
 
@@ -90,8 +91,14 @@ PixelPainter.prototype.build_palette = function () {
     class: "eraser",
   });
 
+  var clear = $("<button>", {
+    class: "clear",
+    html: "clear all"
+  });
+
   this.palette_container.append(color_grid);
   this.palette_container.append(eraser);
+  this.palette_container.append(clear);
 
   return this.palette_container;
 }
@@ -119,15 +126,21 @@ PixelPainter.prototype.color_changer = function () {
 
 }
 
+PixelPainter.prototype.clear_all = function () {
 
-PixelPainter.prototype.eraser = function () {
-
-
-
-}
-
-PixelPainter.prototype.clear = function () {
+  //Clear All event listener
+  this.palette_container.find("button.clear").click(function () {
   
+    var answer = confirm("Are you sure you want to clear all?")
+  
+    if(answer){
+
+      $("div.pixel_square").css('background-color', "#fff");
+
+    }
+
+  });
+
 }
 
 

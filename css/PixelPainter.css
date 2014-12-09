@@ -27,7 +27,7 @@ div.palette_container {
 
   /*background-color: blue;*/
   float: left;
-  width: 100px;
+  width: 13%;
   height: 100%;
   margin-right: 50px;
   border: 2px solid black;
@@ -37,7 +37,7 @@ div.palette_container {
 div.color_grid {
 
   display: inline-block;
-  margin-top: 15px;
+  margin-top: 10px;
 
 }
 
@@ -47,8 +47,16 @@ div.eraser {
   background-size: cover;
   width: 32px;
   height: 32px;
-  margin: 15px 10px;
+  margin: 17px 10px;
   display: inline-block;
+
+}
+
+button.clear {
+
+  text-transform: capitalize;
+  font-size: 14px;
+  
 
 }
 
