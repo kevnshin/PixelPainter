@@ -12,42 +12,51 @@ h1 {
   text-align: center;
 }
 
+div{
+
+  margin: 0;
+  padding: 0;
+
+}
+
 #container {
-  /*background-color: red;*/
   display: inline-block;
 }
 
 div.palette_container {
 
-  text-align: center;
-  display: inline-block;
   /*background-color: blue;*/
   float: left;
-  width: 150px;
-
-}
-
-div.grid, div.color_grid {
-
-  border: 1px solid black;
-  padding: 0;
-  display: inline-block;
-  float: left;
+  width: 100px;
+  height: 100%;
+  margin-right: 50px;
+  border: 2px solid black;
 
 }
 
 div.color_grid {
 
-  border: 3px solid black;
-  
+  display: inline-block;
+  margin-top: 15px;
+
 }
 
+div.eraser {
 
+  background-image: url('/images/eraser9.png');
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+  margin: 15px 10px;
+  display: inline-block;
 
-div.pixel_row, div.color_row {
+}
 
-  margin: 0;
-  padding: 0;
+div.grid {
+
+  border: 1px solid black;
+  display: inline-block;
+  float: left;
 
 }
 

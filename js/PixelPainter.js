@@ -2,7 +2,6 @@ function PixelPainter (width, height) {
 
   this.width = width;
   this.height = height;
-  this.color = null; //arbitrarily white
 
 }
 
@@ -12,9 +11,7 @@ PixelPainter.prototype.render = function () {
   $("#container").addClass("clearfix");
 
   var app = [this.build_palette(), this.build_grid()];
-  var color = this.color_copier();
-  this.color_dropper(color);
-
+  this.color_changer();
 
   return app;
 
@@ -43,7 +40,6 @@ PixelPainter.prototype.build_grid = function () {
       var new_pixelsquare = $("<div>", {
         class: "pixel_square"
       });
-
       //add the pixel element to the row
       new_pixelrow.append(new_pixelsquare);
     }
@@ -88,38 +84,45 @@ PixelPainter.prototype.build_palette = function () {
 
   // var color_sampler = $("<div>", {
   //   class: "color_sampler"
-  // });  
+  // });
 
-
-
+  var eraser = $("<div>", {
+    class: "eraser",
+  });
 
   this.palette_container.append(color_grid);
+  this.palette_container.append(eraser);
 
   return this.palette_container;
 }
 
+PixelPainter.prototype.color_changer = function () {
 
+  var color;
 
-PixelPainter.prototype.color_dropper = function (color) {
-  
-  this.grid.find("div.pixel_square").click(function () {
-    console.log("TEST: " + color);
-    $(this).css('background-color', color);// FIX the hardcoded color
-  })
-
-}
-
-PixelPainter.prototype.color_copier = function () {
-
+  //Color copier event listener
   this.palette_container.find("div.color_square").click(function () {
-    var color = $(this).css('background-color');
+    color = $(this).css('background-color');
     console.log("TEST: " + color);
-    return color;
   });
 
+  //Eraser event listener
+  this.palette_container.find("div.eraser").click(function () {
+    color = "white";
+  });
+
+  //Color dropper event listener
+  this.grid.find("div.pixel_square").click(function () {
+    $(this).css('background-color', color);
+  });
+
+
 }
 
+
 PixelPainter.prototype.eraser = function () {
+
+
 
 }
 
