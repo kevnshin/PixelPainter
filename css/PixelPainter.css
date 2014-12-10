@@ -4,12 +4,20 @@
   clear: both;
 }
 
+/*General Styles*/
+
 body {
   text-align: center;
 }
 
 h1 {
+
   text-align: center;
+  margin-top: 3 0px;
+  font-family: calibri;
+  font-weight: lighter;
+  font-size: 40px;
+
 }
 
 div{
@@ -18,6 +26,9 @@ div{
   padding: 0;
 
 }
+
+
+/*Specific Styles*/
 
 #container {
   display: inline-block;
@@ -28,7 +39,7 @@ div.palette_container {
   /*background-color: blue;*/
   float: left;
   width: 13%;
-  height: 100%;
+  height: 403px;
   margin-right: 50px;
   border: 2px solid black;
 
@@ -44,11 +55,25 @@ div.color_grid {
 div.eraser {
 
   background-image: url('/images/eraser9.png');
-  background-size: cover;
-  width: 32px;
-  height: 32px;
-  margin: 17px 10px;
+  /*background-size: cover;*/
+  background-repeat: no-repeat;
+  background-position: center center; 
+  border: 1px solid black;
+  border-color: transparent;
+  width: 37px;
+  height: 37px;
+  margin: 10px 10px;
   display: inline-block;
+
+}
+
+div.color_sampler {
+
+  height: 20px;
+  width: 55px;
+  background-color: none;
+  border: 1px solid black;
+  margin: 10px auto 0px;
 
 }
 
@@ -56,7 +81,10 @@ button.clear {
 
   text-transform: capitalize;
   font-size: 14px;
-  
+  font-family: calibri;
+  font-weight: lighter;
+  background-color: white;
+  border-radius: 3px;  
 
 }
 
@@ -82,8 +110,8 @@ div.pixel_square {
 
 div.color_square {
 
-  height: 22px;
-  width: 22px;
+  height: 20px;
+  width: 20px;
   border: 1px solid black;
   border-radius: 50%;
   display: inline-block;
@@ -91,6 +119,17 @@ div.color_square {
   margin: 2px;
 
 }
+
+div.selected {
+
+  border: 1px dashed #FF774A;
+
+}
+
+div.brush_cursor {
+  cursor: url("/images/paintbrush.png");
+}
+
 
 /*COLORS*/
 

@@ -6,6 +6,7 @@ function PixelPainter (width, height) {
 }
 
 //Render should render all elements of the app
+//Just need to run render in app.js, nothing else is needed
 PixelPainter.prototype.render = function () {
 
   $("#container").addClass("clearfix");
@@ -15,7 +16,6 @@ PixelPainter.prototype.render = function () {
   this.clear_all();
 
   return app;
-
 };
 
 //This method builds out the grid according 
@@ -83,9 +83,9 @@ PixelPainter.prototype.build_palette = function () {
     color_grid.append(color_row);
   }
 
-  // var color_sampler = $("<div>", {
-  //   class: "color_sampler"
-  // });
+  var color_sampler = $("<div>", {
+    class: "color_sampler"
+  });
 
   var eraser = $("<div>", {
     class: "eraser",
@@ -96,25 +96,30 @@ PixelPainter.prototype.build_palette = function () {
     html: "clear all"
   });
 
-  this.palette_container.append(color_grid);
-  this.palette_container.append(eraser);
-  this.palette_container.append(clear);
-
+  this.palette_container.append(color_grid, color_sampler, eraser, clear);
   return this.palette_container;
 }
 
+//This method takes care of all color changing listeners
+//The color copier, the eraser, and the color dropper
 PixelPainter.prototype.color_changer = function () {
 
   var color;
 
   //Color copier event listener
   this.palette_container.find("div.color_square").click(function () {
+  
+    $("div.color_square").removeClass("selected");
+    $("div.eraser").removeClass("selected");
+    $(this).addClass("selected");
     color = $(this).css('background-color');
-    console.log("TEST: " + color);
+    $("div.color_sampler").css("background-color", color);
   });
 
   //Eraser event listener
   this.palette_container.find("div.eraser").click(function () {
+    $("div").removeClass("selected");
+    $(this).addClass("selected");
     color = "white";
   });
 
@@ -122,21 +127,18 @@ PixelPainter.prototype.color_changer = function () {
   this.grid.find("div.pixel_square").click(function () {
     $(this).css('background-color', color);
   });
-
-
 }
 
+//This method listens for the click on the "clear all button"
+//If user confirms clear all, colors on pixels are reset
 PixelPainter.prototype.clear_all = function () {
 
   //Clear All event listener
   this.palette_container.find("button.clear").click(function () {
   
     var answer = confirm("Are you sure you want to clear all?")
-  
-    if(answer){
-
+    if(answer){//yes
       $("div.pixel_square").css('background-color', "#fff");
-
     }
 
   });
