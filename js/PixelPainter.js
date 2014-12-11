@@ -131,6 +131,8 @@ PixelPainter.prototype.colorChanger = function () {
     $("div").removeClass("selected");
     $(this).addClass("selected");
     color = "white";
+    $("div.color_sampler").css("background-color", color);
+    
   });
 
   //Color dropper event listener

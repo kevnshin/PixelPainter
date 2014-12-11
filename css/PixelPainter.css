@@ -99,7 +99,7 @@ div.grid {
 div.pixel_square {
 
   height: 25px;
-  width: 25px;
+  width: 25px;  
   background-color: #fff;
   border: 1px solid black;
   display: inline-block;
