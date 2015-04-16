@@ -1,0 +1,206 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*General Styles*/
+
+body {
+  text-align: center;
+}
+
+
+div{
+
+  margin: 0;
+  padding: 0;
+
+}
+
+
+/*Specific Styles*/
+
+#container {
+  margin-top: 50px;
+  display: inline-block;
+}
+
+div.palette_container {
+
+  /*background-color: blue;*/
+  float: left;
+  width: 13%;
+  height: 403px;
+  margin-right: 50px;
+  border: 2px solid black;
+
+}
+
+div.color_grid {
+
+  display: inline-block;
+  margin-top: 10px;
+
+}
+
+div.eraser {
+
+  background-image: url('/images/eraser9.png');
+  /*background-size: cover;*/
+  background-repeat: no-repeat;
+  background-position: center center; 
+  border: 1px solid black;
+  border-color: transparent;
+  width: 37px;
+  height: 37px;
+  margin: 10px 10px;
+  display: inline-block;
+
+}
+
+div.color_sampler {
+
+  height: 20px;
+  width: 55px;
+  background-color: none;
+  border: 1px solid black;
+  margin: 10px auto 0px;
+
+}
+
+button.clear {
+
+  text-transform: capitalize;
+  font-size: 14px;
+  font-family: calibri;
+  font-weight: lighter;
+  background-color: white;
+  border-radius: 3px;  
+
+}
+
+div.grid {
+
+  border: 1px solid black;
+  display: inline-block;
+  float: left;
+
+}
+
+div.pixel_square {
+
+  height: 25px;
+  width: 25px;  
+  background-color: #fff;
+  border: 1px solid black;
+  display: inline-block;
+  float: left;
+  margin:0;
+
+}
+
+div.color_square {
+
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  display: inline-block;
+  float: left;
+  margin: 2px;
+
+}
+
+div.selected {
+
+  border: 1px dashed #FF774A;
+
+}
+
+div.brush_cursor {
+  cursor: url("/images/paintbrush.png");
+}
+
+
+/*COLORS*/
+
+div.white {
+  background-color: #fff;
+}
+
+div.black {
+  background-color: #000;
+}
+
+div.light_gray {
+  background-color: #C3C3C3;
+}
+
+div.gray {
+  background-color: #7F7F7F;
+}
+
+div.brown {
+  background-color: #B97A57;
+}
+
+div.maroon {
+  background-color: #880015;
+}
+
+div.pink {
+  background-color: #FFAEC9;
+}
+
+div.red {
+  background-color: #ED1C24;
+}
+
+div.yellow_orange {
+  background-color: #FFC90E;
+}
+
+div.orange {
+  background-color: #FF7F27;
+}
+
+div.tan {
+  background-color: #EFE4B0;
+}
+
+div.yellow {
+  background-color: #FFF200;
+}
+
+div.yellow_green {
+  background-color: #B5E61D;
+}
+
+div.green {
+  background-color: #22B14C;
+}
+
+div.light_blue {
+  background-color: #99D9EA;
+}
+
+div.blue {
+  background-color: #00A2E8;
+}
+
+div.dark_blue {
+  background-color: #7092BE;
+}
+
+div.blue_violet {
+  background-color: #3F48CC;
+}
+
+div.light_purple {
+  background-color: #C8BFE7;
+}
+
+div.purple {
+  background-color: #A349A4;
+}
