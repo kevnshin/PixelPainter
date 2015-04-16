@@ -129,8 +129,7 @@ PixelPainter.prototype.registerEventListeners = function () {
   this.palette_container.find("button.clear").click(function () {
     var answer = confirm("Are you sure you want to clear all?")
     if(answer){//yes
-      $("div.pixel_square"
-        ).css('background-color', "#fff");
+      $("div.pixel_square").css('background-color', "#fff");
     }
   });
 
