@@ -46,7 +46,7 @@ div.color_grid {
 
 div.eraser {
 
-  background-image: url('/images/eraser9.png');
+  background-image: url('../images/eraser9.png');
   /*background-size: cover;*/
   background-repeat: no-repeat;
   background-position: center center; 
